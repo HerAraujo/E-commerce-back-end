@@ -17,6 +17,7 @@ const User = require("./User")(sequelize, Model, DataTypes);
 const Address = require("./Product")(sequelize, Model, DataTypes);
 const Order = require("./Product")(sequelize, Model, DataTypes);
 const State = require("./State")(sequelize, Model, DataTypes);
+const Admin = require("./Admin")(sequelize, Model, DataTypes);
 
 Category.hasMany(Product);
 Product.belongsTo(Category);
@@ -38,4 +39,5 @@ module.exports = {
   Address,
   Order,
   State,
+  Admin,
 };

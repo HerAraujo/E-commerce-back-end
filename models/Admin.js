@@ -41,7 +41,7 @@ module.exports = (sequelize, Model, DataTypes) => {
     },
   );
 
-  User.beforeCreate(async (admin, options) => {
+  Admin.beforeCreate(async (admin, options) => {
     const hashedPassword = await bcryptjs.hash(admin.password, process.env.HASH_ROUNDS);
     admin.password = hashedPassword;
   });

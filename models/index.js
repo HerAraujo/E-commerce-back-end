@@ -40,4 +40,5 @@ module.exports = {
   Order,
   State,
   Admin,
+  User,
 };

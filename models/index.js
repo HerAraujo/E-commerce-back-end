@@ -16,27 +16,26 @@ const Product = require("./Product")(sequelize, Model, DataTypes);
 const User = require("./User")(sequelize, Model, DataTypes);
 const Address = require("./Product")(sequelize, Model, DataTypes);
 const Order = require("./Product")(sequelize, Model, DataTypes);
-const State = require("./State")(sequelize, Model, DataTypes);
+const OrderStatus = require("./OrderStatus")(sequelize, Model, DataTypes);
 const Image = require("./Image")(sequelize, Model, DataTypes);
-const Line = require("./Line")(sequelize, Model, DataTypes);
+const OrderLine = require("./OrderLine")(sequelize, Model, DataTypes);
 const Admin = require("./Admin")(sequelize, Model, DataTypes);
 
-Category.hasMany(Product);
-Product.belongsTo(Category);
-User.hasMany(Address);
-User.hasMany(Order);
-Address.belongsTo(User);
-Order.belongsTo(User);
-State.hasMany(Order);
-Order.belongsTo(State);
-Order.belongsTo(Address);
-Address.hasMany(Order);
-Order.hasMany(Product);
-Product.belongsTo(Order);
+Product.hasMany(Category);
 Product.hasMany(Image);
+Category.belongsTo(Product);
 Image.belongsTo(Product);
-Line.hasMany(Order);
-Line.hasMany(Product);
+
+User.hasMany(Address);
+Address.belongsTo(User);
+User.hasMany(Order);
+Order.belongsTo(User);
+
+OrderStatus.hasMany(Order);
+Order.belongsTo(OrderStatus);
+
+Order.hasMany(OrderLine);
+OrderLine.belongsTo(Order);
 
 module.exports = {
   sequelize,
@@ -44,9 +43,9 @@ module.exports = {
   Product,
   Address,
   Order,
-  State,
+  OrderStatus,
   Image,
-  Line,
+  OrderLine,
   Admin,
   User,
 };

@@ -1,7 +1,7 @@
 module.exports = (sequelize, Model, DataTypes) => {
-  class State extends Model {}
+  class OrderStatus extends Model {}
 
-  State.init(
+  OrderStatus.init(
     {
       id: {
         type: DataTypes.BIGINT.UNSIGNED,
@@ -16,9 +16,9 @@ module.exports = (sequelize, Model, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "state",
+      modelName: "orderStatus",
     },
   );
 
-  return State;
+  return OrderStatus;
 };

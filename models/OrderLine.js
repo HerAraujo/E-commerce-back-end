@@ -1,27 +1,31 @@
 module.exports = (sequelize, Model, DataTypes) => {
-  class Line extends Model {}
+  class OrderLine extends Model {}
 
-  Line.init(
+  OrderLine.init(
     {
       id: {
         type: DataTypes.BIGINT.UNSIGNED,
         primaryKey: true,
         autoIncrement: true,
       },
+      orderedProduct: {
+        type: DataTypes.JSON,
+        allowNull: false,
+      },
       quantity: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      price: {
+      amount: {
         type: DataTypes.DECIMAL,
         allowNull: false,
       },
     },
     {
       sequelize,
-      modelName: "image",
+      modelName: "orderLine",
     },
   );
 
-  return Line;
+  return OrderLine;
 };

@@ -8,10 +8,18 @@ module.exports = (sequelize, Model, DataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
+      address: {
+        type: DataTypes.JSON,
+        allowNull: false,
+      },
+      total: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+      },
     },
     {
       sequelize,
-      modelName: "state",
+      modelName: "order",
     },
   );
 

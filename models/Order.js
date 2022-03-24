@@ -12,10 +12,14 @@ module.exports = (sequelize, Model, DataTypes) => {
         type: DataTypes.JSON,
         allowNull: false,
       },
-      total: {
-        type: DataTypes.DECIMAL,
-        allowNull: false,
+
+      products: {
+        type: DataTypes.JSON, //[{ id: 10, price: 890.99, quantity: 4 }, { id: 11, price: 990.99, quantity: 4 },]
       },
+      // total: {
+      //   type: DataTypes.DECIMAL,
+      //   allowNull: false,
+      // },
     },
     {
       sequelize,

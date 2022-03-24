@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const routes = require("./routes");
-const dbInitialSetup = require("./dbInitialSetup");
+const dbInitialSetup = require("./db/dbInitialSetup");
 const cors = require("cors");
 const APP_PORT = process.env.APP_PORT || 8001;
 const app = express();

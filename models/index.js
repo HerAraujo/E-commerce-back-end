@@ -14,20 +14,19 @@ const sequelize = new Sequelize(
 const Category = require("./Category")(sequelize, Model, DataTypes);
 const Product = require("./Product")(sequelize, Model, DataTypes);
 const User = require("./User")(sequelize, Model, DataTypes);
-const Address = require("./Product")(sequelize, Model, DataTypes);
-const Order = require("./Product")(sequelize, Model, DataTypes);
+const Address = require("./Address")(sequelize, Model, DataTypes);
+const Order = require("./Order")(sequelize, Model, DataTypes);
 const OrderStatus = require("./OrderStatus")(sequelize, Model, DataTypes);
 const Image = require("./Image")(sequelize, Model, DataTypes);
 const OrderLine = require("./OrderLine")(sequelize, Model, DataTypes);
 const Admin = require("./Admin")(sequelize, Model, DataTypes);
 
-Product.hasMany(Category);
-Product.hasMany(Image);
-Category.belongsTo(Product);
-Image.belongsTo(Product);
+Category.hasMany(Product);
+Product.belongsTo(Category);
 
 User.hasMany(Address);
 Address.belongsTo(User);
+
 User.hasMany(Order);
 Order.belongsTo(User);
 

@@ -16,7 +16,9 @@ async function update(req, res) {
 }
 
 async function destroy(req, res) {
-  //if no orders remove. if orders, remove and orders with removed state, asign state previously created (example: removed-state)
+  //if no orders remove. if orders, remove and orders with removed state, asign state previously created (example: removed-state) ¿?
   try {
   } catch (err) {}
 }
+
+module.exports = { show, store, update, destroy };

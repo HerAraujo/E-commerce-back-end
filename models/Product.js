@@ -30,9 +30,8 @@ module.exports = (sequelize, Model, DataTypes) => {
       slug: {
         type: DataTypes.STRING,
       },
-      image: {
+      images: {
         type: DataTypes.JSON,
-        allowNull: false,
       },
     },
     {

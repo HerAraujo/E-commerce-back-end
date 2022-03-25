@@ -8,6 +8,7 @@ const APP_PORT = process.env.APP_PORT || 8001;
 const app = express();
 
 //Middlewares
+app.use(express.static("public"));
 app.use(cors());
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));

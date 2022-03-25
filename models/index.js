@@ -18,7 +18,6 @@ const Address = require("./Address")(sequelize, Model, DataTypes);
 const Order = require("./Order")(sequelize, Model, DataTypes);
 const OrderStatus = require("./OrderStatus")(sequelize, Model, DataTypes);
 const Image = require("./Image")(sequelize, Model, DataTypes);
-//const OrderLine = require("./OrderLine")(sequelize, Model, DataTypes);
 const Admin = require("./Admin")(sequelize, Model, DataTypes);
 
 Category.hasMany(Product);
@@ -33,9 +32,6 @@ Order.belongsTo(User);
 OrderStatus.hasMany(Order);
 Order.belongsTo(OrderStatus);
 
-// Order.hasMany(OrderLine);
-// OrderLine.belongsTo(Order);
-
 module.exports = {
   sequelize,
   Category,
@@ -44,7 +40,6 @@ module.exports = {
   Order,
   OrderStatus,
   Image,
-  //OrderLine,
   Admin,
   User,
 };

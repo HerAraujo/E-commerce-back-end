@@ -10,7 +10,13 @@ module.exports = async () => {
       stock: 20,
       featured: true,
       slug: "-pils-munich",
-      image: [{ reference: 1 }],
+      images: [
+        {
+          id: 1,
+          name: "lager-1.jpg",
+          title: "lager-1",
+        },
+      ],
       categoryId: 1,
     },
     {
@@ -20,7 +26,13 @@ module.exports = async () => {
       price: 3.98,
       stock: 25,
       slug: "-amber-brussels",
-      image: [{ reference: 2 }],
+      images: [
+        {
+          id: 2,
+          name: "lager-2.jpg",
+          title: "lager-2",
+        },
+      ],
       categoryId: 1,
     },
     {
@@ -31,7 +43,13 @@ module.exports = async () => {
       stock: 30,
       featured: true,
       slug: "-bock-rotterdam",
-      image: [{ reference: 3 }],
+      images: [
+        {
+          id: 3,
+          name: "lager-3.jpg",
+          title: "lager-3",
+        },
+      ],
       categoryId: 1,
     },
     {
@@ -41,7 +59,13 @@ module.exports = async () => {
       price: 5.65,
       stock: 40,
       slug: "-stout-mons",
-      image: [{ reference: 4 }],
+      images: [
+        {
+          id: 4,
+          name: "dark-2.jpg",
+          title: "dark-2",
+        },
+      ],
       categoryId: 3,
     },
     {
@@ -52,7 +76,13 @@ module.exports = async () => {
       stock: 36,
       featured: true,
       slug: "-porter-berlin",
-      image: [{ reference: 5 }],
+      images: [
+        {
+          id: 5,
+          name: "dark-1.jpg",
+          title: "dark-1",
+        },
+      ],
       categoryId: 3,
     },
     {
@@ -61,8 +91,15 @@ module.exports = async () => {
         "Medium or slightly fuller body, medium levels of fruity aromas and flavors, medium hop bitterness and flavors, and medium to slightly fuller malt character.",
       price: 4.36,
       stock: 24,
+      featured: true,
       slug: "-ale-lisburn",
-      image: [{ reference: 6 }],
+      images: [
+        {
+          id: 6,
+          name: "red-2.jpg",
+          title: "red-2",
+        },
+      ],
       categoryId: 2,
     },
   ];

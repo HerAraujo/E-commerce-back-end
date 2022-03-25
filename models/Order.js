@@ -14,12 +14,8 @@ module.exports = (sequelize, Model, DataTypes) => {
       },
 
       products: {
-        type: DataTypes.JSON, //[{ id: 10, price: 890.99, quantity: 4 }, { id: 11, price: 990.99, quantity: 4 },]
+        type: DataTypes.JSON,
       },
-      // total: {
-      //   type: DataTypes.DECIMAL,
-      //   allowNull: false,
-      // },
     },
     {
       sequelize,

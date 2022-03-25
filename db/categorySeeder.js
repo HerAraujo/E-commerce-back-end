@@ -5,17 +5,17 @@ module.exports = async () => {
     {
       name: "Lager",
       slug: "-lager",
-      photo: `${process.env.SEEDERS_IMAGES}/category-lager.jpg`,
+      photo: "category-lager.jpg",
     },
     {
       name: "Red",
       slug: "-red",
-      photo: `${process.env.SEEDERS_IMAGES}/category-red.jpg`,
+      photo: "category-red.jpg",
     },
     {
       name: "Dark",
       slug: "-dark",
-      photo: `${process.env.SEEDERS_IMAGES}/category-dark.jpg`,
+      photo: "category-dark.jpg",
     },
   ];
 

@@ -122,7 +122,7 @@ module.exports = async () => {
       categoryId: 4,
     },
     {
-      name: "Buswiser",
+      name: "Budwiser",
       description:
         "Budweiser (Anheuser-Busch) is a beer of Czech origin, patented in the United States and one of the most popular in that country. Budweiser is made with up to 30% rice1 content, plus hops and barley malt. Budweiser is produced in several factories. It is a filtered beer available in barrel and bottled form.",
       price: 3.58,

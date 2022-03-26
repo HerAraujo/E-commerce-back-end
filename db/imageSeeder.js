@@ -30,6 +30,26 @@ module.exports = async () => {
       name: "dark-2.jpg",
       title: "dark-2",
     },
+    {
+      name: "heineken.jpg",
+      title: "heineken",
+    },
+    {
+      name: "budweiser.jpg",
+      title: "budweiser",
+    },
+    {
+      name: "carlsberg.jpg",
+      title: "carlsberg",
+    },
+    {
+      name: "stella-artois.jpeg",
+      title: "stella-artois",
+    },
+    {
+      name: "amstel.jpg",
+      title: "amstel",
+    },
   ];
 
   await Image.bulkCreate(images);

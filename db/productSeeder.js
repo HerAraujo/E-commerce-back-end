@@ -2,6 +2,7 @@ const { Product } = require("../models");
 
 module.exports = async () => {
   const products = [
+    //craft
     {
       name: "Pils Munich",
       description:
@@ -9,7 +10,7 @@ module.exports = async () => {
       price: 4.51,
       stock: 20,
       featured: true,
-      slug: "-pils-munich",
+      slug: "pils-munich",
       images: [
         {
           id: 1,
@@ -25,7 +26,7 @@ module.exports = async () => {
         "Mild caramel flavor, made with a combination of four malts, which give it its characteristic amber color and malty flavor, leaving a subtle sweetness in the mouth.",
       price: 3.98,
       stock: 25,
-      slug: "-amber-brussels",
+      slug: "amber-brussels",
       images: [
         {
           id: 2,
@@ -42,7 +43,7 @@ module.exports = async () => {
       price: 2.99,
       stock: 30,
       featured: true,
-      slug: "-bock-rotterdam",
+      slug: "bock-rotterdam",
       images: [
         {
           id: 3,
@@ -58,7 +59,7 @@ module.exports = async () => {
         "Stout is characterized by being extremely dark, almost black, well toasted and with a high percentage of alcohol. On the nose aromas of coffee and chocolate are perceived. Its foam is dense.",
       price: 5.65,
       stock: 40,
-      slug: "-stout-mons",
+      slug: "stout-mons",
       images: [
         {
           id: 4,
@@ -75,7 +76,7 @@ module.exports = async () => {
       price: 3.25,
       stock: 36,
       featured: true,
-      slug: "-porter-berlin",
+      slug: "porter-berlin",
       images: [
         {
           id: 5,
@@ -92,7 +93,7 @@ module.exports = async () => {
       price: 4.36,
       stock: 24,
       featured: true,
-      slug: "-ale-lisburn",
+      slug: "ale-lisburn",
       images: [
         {
           id: 6,
@@ -101,6 +102,92 @@ module.exports = async () => {
         },
       ],
       categoryId: 2,
+    },
+    //industrial
+    {
+      name: "Heineken",
+      description:
+        "Heineken Pilsener, known simply as Heineken, is a beer with 5.0% alc. vol., brewed by the Dutch brewery Heineken International.",
+      price: 3.25,
+      stock: 24,
+      featured: true,
+      slug: "heineken",
+      images: [
+        {
+          id: 6,
+          name: "heineken.jpg",
+          title: "heineken",
+        },
+      ],
+      categoryId: 4,
+    },
+    {
+      name: "Buswiser",
+      description:
+        "Budweiser (Anheuser-Busch) is a beer of Czech origin, patented in the United States and one of the most popular in that country. Budweiser is made with up to 30% rice1 content, plus hops and barley malt. Budweiser is produced in several factories. It is a filtered beer available in barrel and bottled form.",
+      price: 3.58,
+      stock: 36,
+      featured: true,
+      slug: "budweiser",
+      images: [
+        {
+          id: 6,
+          name: "budweiser.jpg",
+          title: "budweiser",
+        },
+      ],
+      categoryId: 4,
+    },
+    {
+      name: "Carlsberg",
+      description:
+        "Carlsberg is one of the largest brewing companies in the world, considered the quintessential Danish beer. It has a presence in about 50 countries. The headquarters is in the city of Valby in Copenhagen, Denmark.",
+      price: 2.58,
+      stock: 18,
+      featured: true,
+      slug: "carlsberg",
+      images: [
+        {
+          id: 6,
+          name: "carlsberg.jpg",
+          title: "carlsberg",
+        },
+      ],
+      categoryId: 4,
+    },
+    {
+      name: "Stella Artois",
+      description:
+        "It is brewed in Belgium (both at the Leuven and Jupille plants), as well as in other countries such as the United Kingdom, Australia, and Ukraine. Much of the Stella Artois exported from Europe is currently produced at the Leuven brewery. InBev in Belgium, and bottled at the Beck's brewery in Bremen, Germany and in the Canary Islands (Spain) at the Dorada and Tropical breweries since 2018.",
+      price: 2.58,
+      stock: 18,
+      featured: true,
+      slug: "stella-artois",
+      images: [
+        {
+          id: 6,
+          name: "stella-artois.jpeg",
+          title: "stella-artois",
+        },
+      ],
+      categoryId: 4,
+    },
+    {
+      name: "Amstel",
+      description:
+        "Amstel is a beer brand founded in 1870, which since 1968 has been owned by the Dutch group Heineken International.",
+      price: 2.58,
+      stock: 18,
+      featured: true,
+      slug: "amstel",
+      images: [
+        {
+          id: 6,
+          name: "amstel.jpg",
+          title: "amstel",
+        },
+      ],
+      categoryId: 4,
     },
   ];
 

@@ -1,5 +1,11 @@
+const bcryptjs = require("bcryptjs");
+
 module.exports = (sequelize, Model, DataTypes) => {
-  class User extends Model {}
+  class User extends Model {
+    async validatePassword(passwordToCompare) {
+      return await bcryptjs.compare(passwordToCompare, this.password);
+    }
+  }
 
   User.init(
     {
@@ -38,6 +44,11 @@ module.exports = (sequelize, Model, DataTypes) => {
       modelName: "user",
     },
   );
+
+  User.beforeCreate(async (user, options) => {
+    const hashedPassword = await bcryptjs.hash(user.password, Number(process.env.HASH_ROUNDS));
+    user.password = hashedPassword;
+  });
 
   return User;
 };

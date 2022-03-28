@@ -6,22 +6,38 @@ async function show(req, res) {
   try {
     const products = await Product.findAll();
     res.json(products);
-  } catch (err) {}
+  } catch (err) {
+    res.status(404).json({ message: "An error has ocurred" });
+  }
 }
 
 async function store(req, res) {
   try {
-  } catch (err) {}
+    const product = await Product.create({ ...req.body });
+    res.json(product);
+  } catch (err) {
+    res.status(404).json({ message: "An error has ocurred" });
+  }
 }
 
 async function update(req, res) {
   try {
-  } catch (err) {}
+    const product = await Product.findByPk(req.params.id);
+    product && (await product.update({ ...req.body, id: req.params.id }));
+    res.json(product);
+  } catch (err) {
+    res.status(404).json({ message: "An error has ocurred" });
+  }
 }
 
 async function destroy(req, res) {
   try {
-  } catch (err) {}
+    const product = await Product.findByPk(req.params.id);
+    product && (await product.destroy());
+    res.json(product);
+  } catch (err) {
+    res.status(404).json({ message: "An error has ocurred" });
+  }
 }
 
 module.exports = { show, store, update, destroy };

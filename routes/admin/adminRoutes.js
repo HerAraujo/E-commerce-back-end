@@ -1,11 +1,19 @@
 const express = require("express");
 const adminRouter = express.Router();
 
-const { show, store, destroy, update } = require("../../controllers/admin/adminController");
+const {
+  show,
+  store,
+  destroy,
+  update,
+  showAdmin,
+} = require("../../controllers/admin/adminController");
 
 adminRouter.get("/", show);
 
 adminRouter.post("/", store);
+
+adminRouter.get("/:id", showAdmin);
 
 adminRouter.delete("/:id", destroy);
 

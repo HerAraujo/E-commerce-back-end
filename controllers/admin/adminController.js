@@ -35,6 +35,11 @@ async function store(req, res) {
   }
 }
 
+async function showAdmin(req, res) {
+  const admin = await Admin.findByPk(req.params.id);
+  res.json(admin);
+}
+
 async function destroy(req, res) {
   const admin = await Admin.findOne({ where: { id: String(req.params.id) } });
   await Admin.destroy({
@@ -62,4 +67,4 @@ async function update(req, res) {
     : res.json(`Admin with id: ${req.params.id} does not exist`);
 }
 
-module.exports = { show, store, destroy, update };
+module.exports = { show, store, destroy, update, showAdmin };

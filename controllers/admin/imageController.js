@@ -2,28 +2,33 @@ const { Image } = require("../../models");
 
 async function show(req, res) {
   try {
-    try {
-      const images = await Image.findAll();
-      res.json(images);
-    } catch (err) {
-      res.status(400).json({ message: "An error has ocurred" });
-    }
-  } catch (err) {}
+    const images = await Image.findAll();
+    res.json(images);
+  } catch (err) {
+    res.status(400).json({ message: "An error has ocurred" });
+  }
 }
 
 async function store(req, res) {
   try {
-  } catch (err) {}
-}
-
-async function update(req, res) {
-  try {
-  } catch (err) {}
+    const image = await Image.create({
+      name: req.file.filename,
+      title: req.body.title,
+    });
+    res.json(image);
+  } catch (err) {
+    res.status(400).json({ message: "An error has ocurred" });
+  }
 }
 
 async function destroy(req, res) {
   try {
-  } catch (err) {}
+    const image = await Image.findByPk(req.params.id);
+    image && (await image.destroy());
+    res.json(image);
+  } catch (err) {
+    res.status(400).json({ message: "An error has ocurred" });
+  }
 }
 
-module.exports = { show, store, update, destroy };
+module.exports = { show, store, destroy };

@@ -12,17 +12,25 @@ async function show(req, res) {
 
 async function store(req, res) {
   try {
-    const admin = await Admin.create({
-      firstname: String(req.body.firstname),
-      lastname: String(req.body.lastname),
-      password: String(req.body.password),
-      email: String(req.body.email),
+    const admin = await Admin.findOne({
+      where: { email: req.body.email },
     });
-    res.json({
-      firstname: admin.firstname,
-      lastname: admin.lastname,
-    });
+    if (!admin) {
+      await Admin.create({
+        firstname: String(req.body.firstname),
+        lastname: String(req.body.lastname),
+        password: String(req.body.password),
+        email: String(req.body.email),
+      });
+      res.json({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+      });
+    } else {
+      res.json(`${admin.email} does alrady exist`);
+    }
   } catch (err) {
+    console.log(err);
     res.status(400).json({ message: `An error has ocurred` });
   }
 }

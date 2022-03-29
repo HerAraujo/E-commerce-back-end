@@ -1,5 +1,3 @@
-//images here or other controller?
-
 const { Product } = require("../../models");
 
 async function show(req, res) {

@@ -1,5 +1,6 @@
 const res = require("express/lib/response");
 const { Admin } = require("../../models");
+const jwt = require("jsonwebtoken");
 
 async function show(req, res) {
   try {
@@ -67,4 +68,24 @@ async function update(req, res) {
     : res.json(`Admin with id: ${req.params.id} does not exist`);
 }
 
-module.exports = { show, store, destroy, update, showAdmin };
+async function login(req, res) {
+  try {
+    const admin = await Admin.findOne({
+      where: { email: req.body.email },
+    });
+    if (!admin) return res.status(400).json({ message: "Incorrect email or password" });
+    const result = await admin.validatePassword(req.body.password);
+    if (!result) return res.status(400).json({ message: "Incorrect admin or password" });
+    const token = jwt.sign({ sub: admin.id }, process.env.JWT_SECRET);
+    res.json({
+      token: token,
+      id: admin.id,
+      firstname: admin.firstname,
+      lastname: admin.lastname,
+    });
+  } catch (err) {
+    res.status(400).json({ message: `An error has ocurred` });
+  }
+}
+
+module.exports = { show, store, destroy, update, showAdmin, login };

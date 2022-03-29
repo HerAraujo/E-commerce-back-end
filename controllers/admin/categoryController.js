@@ -65,4 +65,14 @@ async function destroy(req, res) {
   }
 }
 
-module.exports = { show, store, update, destroy };
+async function showOne(req, res) {
+  try {
+    const category = await Category.findByPk(req.params.id);
+
+    res.json({ category });
+  } catch (err) {
+    res.status(400).json({ message: `An error has ocurred` });
+  }
+}
+
+module.exports = { show, store, update, destroy, showOne };

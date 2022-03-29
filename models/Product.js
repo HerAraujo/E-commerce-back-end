@@ -11,9 +11,11 @@ module.exports = (sequelize, Model, DataTypes) => {
       name: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       description: {
         type: DataTypes.TEXT,
+        allowNull: false,
       },
       price: {
         type: DataTypes.DECIMAL(8, 2),
@@ -29,6 +31,7 @@ module.exports = (sequelize, Model, DataTypes) => {
       },
       slug: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       images: {
         type: DataTypes.JSON,

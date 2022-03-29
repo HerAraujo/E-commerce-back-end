@@ -2,7 +2,7 @@ const bcryptjs = require("bcryptjs");
 
 module.exports = (sequelize, Model, DataTypes) => {
   class Admin extends Model {
-    async comparePassword(passwordToCompare) {
+    async validatePassword(passwordToCompare) {
       return await bcryptjs.compare(passwordToCompare, this.password);
     }
   }

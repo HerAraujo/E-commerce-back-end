@@ -50,5 +50,12 @@ module.exports = (sequelize, Model, DataTypes) => {
     user.password = hashedPassword;
   });
 
+  User.beforeBulkCreate(async (users, options) => {
+    for (const user of users) {
+      const hashedPassword = await bcryptjs.hash(user.password, Number(process.env.HASH_ROUNDS));
+      user.password = hashedPassword;
+    }
+  });
+
   return User;
 };

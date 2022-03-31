@@ -46,5 +46,11 @@ module.exports = (sequelize, Model, DataTypes) => {
     admin.password = hashedPassword;
   });
 
+  Admin.beforeBulkCreate(async (admins, options) => {
+    for (const admin of admins) {
+      const hashedPassword = await bcryptjs.hash(admin.password, Number(process.env.HASH_ROUNDS));
+      admin.password = hashedPassword;
+    }
+  });
   return Admin;
 };

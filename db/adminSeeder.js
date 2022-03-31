@@ -6,7 +6,7 @@ module.exports = async () => {
       firstname: "admin",
       lastname: "admin",
       email: "admin@gmail.com",
-      password: "encrypted-password",
+      password: "admin",
     },
   ];
 

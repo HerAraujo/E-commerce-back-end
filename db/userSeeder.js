@@ -3,10 +3,10 @@ const { User } = require("../models");
 module.exports = async () => {
   const users = [
     {
-      firstname: "Jack",
-      lastname: "Johnson",
-      email: "mj@gmail.com",
-      password: "encrypted-password",
+      firstname: "User",
+      lastname: "Beer",
+      email: "user@gmail.com",
+      password: "user",
       phone: "3657896",
     },
     {

@@ -3,32 +3,32 @@ const { Image } = require("../models");
 module.exports = async () => {
   const images = [
     {
-      name: "lager-1.jpg",
-      title: "lager-1",
+      name: "belgian-style-blonde-ale.jpeg",
+      title: "belgian-style-blonde-ale",
     },
     {
-      name: "lager-2.jpg",
-      title: "lager-2",
+      name: "belgian-style-dubbel.jpeg",
+      title: "belgian-style-dubbel",
     },
     {
-      name: "lager-3.jpg",
-      title: "lager-3",
+      name: "belgian-style-golden-strong-ale.jpeg",
+      title: "belgian-style-golden-strong-ale",
     },
     {
-      name: "red-1.jpg",
-      title: "red-1",
+      name: "belgian-style-pale-ale.jpeg",
+      title: "belgian-style-pale-ale",
     },
     {
-      name: "red-2.jpg",
-      title: "red-2",
+      name: "belgian-style-quadrupel.jpeg",
+      title: "belgian-style-quadrupel",
     },
     {
-      name: "dark-1.jpg",
-      title: "dark-1",
+      name: "belgian-style-saison.jpeg",
+      title: "belgian-style-saison",
     },
     {
-      name: "dark-2.jpg",
-      title: "dark-2",
+      name: "belgian-style-tripel.jpeg",
+      title: "belgian-style-tripel",
     },
     {
       name: "heineken.jpg",

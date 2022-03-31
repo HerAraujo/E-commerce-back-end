@@ -15,10 +15,7 @@ module.exports = (sequelize, Model, DataTypes) => {
       slug: {
         type: DataTypes.STRING,
       },
-      photo: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+
       description: {
         type: DataTypes.TEXT,
       },

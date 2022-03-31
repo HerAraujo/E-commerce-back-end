@@ -3,32 +3,28 @@ const { Category } = require("../models");
 module.exports = async () => {
   const categories = [
     {
-      name: "Lager",
-      slug: "lager",
-      photo: "category-lager.jpg",
+      name: "Belgian",
+      slug: "belgian",
       description:
-        "Lagers are a tighter group of beers than ales. While there are countless styles of ale, there are only a few styles within the lager family. Generally, the characteristics of a lager include a light, crisp taste that is mellow and smooth. They also tend to have more carbonation than ales and are less bitter.",
+        "Belgian beers are primarily ales (as opposed to lagers) with a heavy emphasis on malts and a lot of fruity yeast flavors.",
     },
     {
-      name: "Red",
-      slug: "red",
-      photo: "category-red.jpg",
+      name: "Hybrid",
+      slug: "hybrid",
       description:
-        "Red Ales originate from Europe and refers to styles of beer that are dark red or are reddish in appearance. This brew style is still, to some extent, waiting for its big break and to secure a spot amongst the more easily recognized beer styles.",
+        "Hybrid beers do not follow the conventional thought that all beer is either an ale or a lager. Instead, hybrids borrow brewing practices from both types of beer; they're a little lager and a little ale.",
     },
     {
       name: "Dark",
       slug: "dark",
-      photo: "category-dark.jpg",
       description:
         "Dark beer is malty and smooth with toasted caramel flavors. These beers tend to have mid-range alcohol content and lower bitterness profiles.",
     },
     {
-      name: "Industrial",
-      slug: "industrial",
-      photo: "",
+      name: "Wheat Beers",
+      slug: "wheat-beers",
       description:
-        "We also bring the quality of the best industrial beers. Variety of aromas, flavors and experiences.",
+        "A wheat beer is any beer made up of at least 50 percent wheat, which is a much higher proportion than other beers that are primarily made of barley, rye, or adjuncts like rice and corn. Wheat beers come in as many styles as you can imagine, but in general, they're light, summery, and refreshing.",
     },
   ];
 

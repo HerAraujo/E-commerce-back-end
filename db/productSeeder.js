@@ -56,7 +56,6 @@ module.exports = async () => {
         "The Belgian-style pale ale is gold to copper in color and can have caramel or toasted malt flavor. The style is characterized by low but noticeable hop bitterness, flavor and aroma.",
       price: 5.65,
       stock: 40,
-      featured: true,
       slug: "pale-ale",
       images: [
         {
@@ -72,7 +71,6 @@ module.exports = async () => {
         "The Belgian-style Quadrupel is amber to dark brown in color. Caramel, dark sugar and malty sweet flavors dominate, with medium-low to medium-high hop bitterness.",
       price: 3.25,
       stock: 36,
-      featured: true,
       slug: "quadrupel",
       images: [
         {
@@ -88,7 +86,6 @@ module.exports = async () => {
         "Belgian-style saison may have Brettanomyces or lactic character, and fruity, horsey, goaty and/or leather-like aromas and flavors.",
       price: 4.36,
       stock: 24,
-      featured: true,
       slug: "saison",
       images: [
         {
@@ -104,7 +101,6 @@ module.exports = async () => {
         "Complex, sometimes mild spicy flavor characterizes this style. Yeast-driven complexity is common. Tripels are often on the higher end of the ABV spectrum, yet are approachable to many different palates. ",
       price: 4.56,
       stock: 24,
-      featured: true,
       slug: "tripel",
       images: [
         {
@@ -121,7 +117,6 @@ module.exports = async () => {
         "A widely available, sessionable craft beer style that showcases both malt and hops. Amber lagers are a medium-bodied lager with a toasty or caramel-like malt character. Hop bitterness can range from very low to medium-high. Brewers may use decoction mash and dry-hopping to achieve advanced flavors.",
       price: 3.66,
       stock: 24,
-      featured: true,
       slug: "american-amber-lager",
       images: [
         {
@@ -230,6 +225,7 @@ module.exports = async () => {
         "The California common is brewed with lager yeast but fermented at ale fermentation temperatures. There is a noticeable degree of toasted malt and/or caramel-like malt character in flavor and often in aroma. Often referred to as “steam beer” and made famous by San Francisco’s Anchor Brewing Company. Seek out woody and mint flavor from the Northern Brewer hops.",
       price: 5.56,
       stock: 24,
+      featured: true,
       slug: "california-common",
       images: [
         {
@@ -356,7 +352,6 @@ module.exports = async () => {
         "The German-style Dunkelweizen can be considered a cross between a German-style dunkel and a hefeweizen. Distinguished by its sweet maltiness and chocolate-like character, it can also have banana and clove (and occasionally vanilla or bubblegum) esters from weizen ale yeast.",
       price: 2.58,
       stock: 18,
-      featured: true,
       slug: "dunkelweizen",
       images: [
         {
@@ -372,7 +367,6 @@ module.exports = async () => {
         "The German-style hefeweizen is straw to amber in color and brewed with at least 50 percent malted wheat. The aroma and flavor of a weissbier comes largely from the yeast and is decidedly fruity (banana) and phenolic (clove). The intensity of these wildly differing flavor qualities varies depending on the brewer, but the two are most commonly balanced. Hefeweizen typically contains a low to moderate alcohol content and is considered to be the most popular amongst the German weissbier variety.",
       price: 2.58,
       stock: 18,
-      featured: true,
       slug: "hefeweizen",
       images: [
         {

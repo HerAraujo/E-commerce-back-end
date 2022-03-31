@@ -47,6 +47,11 @@ module.exports = async () => {
           name: "belgian-style-golden-strong-ale.jpeg",
           title: "belgian-style-golden-strong-ale",
         },
+        {
+          id: 2,
+          name: "lager-2.jpg",
+          title: "lager-2",
+        },
       ],
       categoryId: 1,
     },

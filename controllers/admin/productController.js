@@ -42,4 +42,14 @@ async function destroy(req, res) {
   }
 }
 
-module.exports = { show, store, update, destroy };
+async function storeProductImages(req, res) {
+  try {
+    const product = await Product.findByPk(req.params.id);
+    product && (await product.update({ images: req.body.images }));
+    res.json(product);
+  } catch (err) {
+    res.status(400).json({ message: "An error has ocurred" });
+  }
+}
+
+module.exports = { show, store, update, destroy, storeProductImages };

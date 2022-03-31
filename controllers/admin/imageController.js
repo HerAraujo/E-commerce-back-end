@@ -1,8 +1,9 @@
 const { Image } = require("../../models");
+const formidable = require("formidable");
 
 async function show(req, res) {
   try {
-    const images = await Image.findAll();
+    const images = await Image.findAll({ order: [["Id", "DESC"]] });
     res.json(images);
   } catch (err) {
     res.status(400).json({ message: "An error has ocurred" });
@@ -11,11 +12,19 @@ async function show(req, res) {
 
 async function store(req, res) {
   try {
-    const image = await Image.create({
-      name: req.file.filename,
-      title: req.body.title,
+    const form = formidable({
+      multiples: true,
+      uploadDir: process.env.ABSOLUTE_IMAGES_FOLDER_PATH,
+      keepExtensions: true,
     });
-    res.json(image);
+
+    form.parse(req, (err, fields, files) => {
+      const image = Image.create({
+        name: files.image.newFilename,
+        title: fields.title,
+      });
+      res.json(files.image);
+    });
   } catch (err) {
     res.status(400).json({ message: "An error has ocurred" });
   }

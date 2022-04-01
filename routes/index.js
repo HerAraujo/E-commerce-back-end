@@ -10,6 +10,7 @@ const adminOrderRoutes = require("./admin/orderRoutes");
 const productRoutes = require("./shop/productRoutes");
 const categoryRoutes = require("./shop/categoryRoutes");
 const userRoutes = require("./shop/userRoutes");
+const orderRoutes = require("./shop/orderRoutes");
 
 module.exports = (app) => {
   app.use("/admin", adminStateRoutes);
@@ -22,4 +23,5 @@ module.exports = (app) => {
   app.use(productRoutes);
   app.use(categoryRoutes);
   app.use(userRoutes);
+  app.use(orderRoutes);
 };

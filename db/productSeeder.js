@@ -16,6 +16,14 @@ module.exports = async () => {
           name: "belgian-style-blonde-ale.jpeg",
           title: "belgian-style-blonde-ale",
         },
+        {
+          name: "american-cream-ale.jpeg",
+          title: "american-cream-ale",
+        },
+        {
+          name: "german-style-hefeweizen.jpeg",
+          title: "german-style-hefeweizen",
+        },
       ],
       categoryId: 1,
     },
@@ -46,11 +54,6 @@ module.exports = async () => {
         {
           name: "belgian-style-golden-strong-ale.jpeg",
           title: "belgian-style-golden-strong-ale",
-        },
-        {
-          id: 2,
-          name: "lager-2.jpg",
-          title: "lager-2",
         },
       ],
       categoryId: 1,

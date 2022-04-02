@@ -1,6 +1,6 @@
 //admin
 const adminProductRoutes = require("./admin/productRoutes");
-const adminStateRoutes = require("./admin/stateRoutes");
+const adminStatusRoutes = require("./admin/statusRoutes");
 const adminCategoryRoutes = require("./admin/categoryRoutes");
 const adminAdminRoutes = require("./admin/adminRoutes");
 const adminImageRoutes = require("./admin/imageRoutes");
@@ -13,7 +13,7 @@ const userRoutes = require("./shop/userRoutes");
 const orderRoutes = require("./shop/orderRoutes");
 
 module.exports = (app) => {
-  app.use("/admin", adminStateRoutes);
+  app.use("/admin", adminStatusRoutes);
   app.use("/admin", adminProductRoutes);
   app.use("/admin", adminCategoryRoutes);
   app.use("/admin", adminAdminRoutes);

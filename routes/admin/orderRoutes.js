@@ -1,9 +1,10 @@
-//no remove (change status)
 const express = require("express");
 const orderRouter = express.Router();
 
-const { show } = require("../../controllers/admin/orderController");
+const { show, showOne, updateStatus } = require("../../controllers/admin/orderController");
 
-orderRouter.get("/order", show);
+orderRouter.get("/orders", show);
+orderRouter.get("/orders/:id", showOne);
+orderRouter.put("/orders/:id", updateStatus);
 
 module.exports = orderRouter;

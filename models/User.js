@@ -5,6 +5,12 @@ module.exports = (sequelize, Model, DataTypes) => {
     async validatePassword(passwordToCompare) {
       return await bcryptjs.compare(passwordToCompare, this.password);
     }
+
+    notReturnPassword() {
+      const user = this.toObject();
+      delete user.password;
+      return user;
+    }
   }
 
   User.init(

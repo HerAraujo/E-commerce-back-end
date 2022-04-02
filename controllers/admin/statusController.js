@@ -1,8 +1,12 @@
-const { State } = require("../../models");
+const { OrderStatus } = require("../../models");
 
 async function show(req, res) {
   try {
-  } catch (err) {}
+    const statuses = await OrderStatus.findAll();
+    res.json(statuses);
+  } catch (err) {
+    res.status(400).json({ message: "An error has ocurred" });
+  }
 }
 
 async function store(req, res) {

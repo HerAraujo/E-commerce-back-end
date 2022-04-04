@@ -84,7 +84,8 @@ async function login(req, res) {
       lastname: admin.lastname,
     });
   } catch (err) {
-    res.status(400).json({ message: `An error has ocurred` });
+    res.json(err);
+    // res.status(400).json({ message: `An error has ocurred` });
   }
 }
 

@@ -15,7 +15,6 @@ async function store(req, res) {
       address: req.body.address,
       products: req.body.products,
     });
-    console.log(req.body);
     res.json(order);
   } catch (err) {
     res.status(400).json({ message: `An error has ocurred` });

@@ -2,7 +2,7 @@ const { Order, OrderStatus, User } = require("../../models");
 
 async function show(req, res) {
   try {
-    const orders = await Order.findAll();
+    const orders = await Order.findAll({ order: [["updatedAt", "DESC"]] });
 
     res.json(orders);
   } catch (err) {

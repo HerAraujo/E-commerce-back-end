@@ -11,7 +11,7 @@ module.exports = (sequelize, Model, DataTypes) => {
       name: {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: "confirmed",
+        defaultValue: "CONFIRMED",
       },
     },
     {

@@ -31,6 +31,7 @@ module.exports = (sequelize, Model, DataTypes) => {
       email: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       password: {
         type: DataTypes.STRING,
@@ -52,6 +53,11 @@ module.exports = (sequelize, Model, DataTypes) => {
   );
 
   User.beforeCreate(async (user, options) => {
+    const hashedPassword = await bcryptjs.hash(user.password, Number(process.env.HASH_ROUNDS));
+    user.password = hashedPassword;
+  });
+
+  User.beforeUpdate(async (user, options) => {
     const hashedPassword = await bcryptjs.hash(user.password, Number(process.env.HASH_ROUNDS));
     user.password = hashedPassword;
   });

@@ -1,6 +1,5 @@
 const express = require("express");
 const userRouter = express.Router();
-const checkToken = require("express-jwt");
 
 const { store, login, update } = require("../../controllers/shop/userController");
 

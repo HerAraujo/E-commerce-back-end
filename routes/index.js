@@ -13,14 +13,12 @@ const userRoutes = require("./shop/userRoutes");
 const orderRoutes = require("./shop/orderRoutes");
 
 module.exports = (app) => {
-  app.use("/admin", adminAdminRoutes); //check jwt (except login)
-  app.use("/admin", adminCategoryRoutes); //already protected by checked on admin
-  app.use("/admin", adminImageRoutes); //already protected by checked on admin
-  app.use("/admin", adminStatusRoutes); //already protected by checked on admin
-
-  app.use("/admin", adminProductRoutes);
-
+  app.use("/admin", adminAdminRoutes); //all /admin checked by jwt (except /admin/tokens (login))
+  app.use("/admin", adminCategoryRoutes);
+  app.use("/admin", adminImageRoutes);
+  app.use("/admin", adminStatusRoutes);
   app.use("/admin", adminOrderRoutes);
+  app.use("/admin", adminProductRoutes);
 
   app.use(productRoutes);
   app.use(categoryRoutes);

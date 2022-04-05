@@ -1,10 +1,15 @@
 const { Order } = require("../../models");
+const { OrderStatus } = require("../../models");
 
 async function store(req, res) {
   try {
+    const orderStatus = await OrderStatus.findOne({ where: { name: "CONFIRMED" } });
+
     const order = await Order.create({
       address: req.body.address,
       products: req.body.products,
+      userId: req.user.sub,
+      orderStatusId: orderStatus.id,
     });
     res.json(order);
   } catch (err) {

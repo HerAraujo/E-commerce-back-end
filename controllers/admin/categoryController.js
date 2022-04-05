@@ -16,12 +16,7 @@ async function store(req, res) {
       description: String(req.body.description),
     });
 
-    // const token = jwt.sign({ sub: user.id }, process.env.JWT_SECRET);
-
-    res.json({
-      //   token: token,
-      category,
-    });
+    res.json({ category });
   } catch (err) {
     res.status(400).json({ message: `An error has ocurred` });
   }

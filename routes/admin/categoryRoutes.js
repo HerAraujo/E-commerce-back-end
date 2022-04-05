@@ -9,10 +9,10 @@ const {
   showOne,
 } = require("../../controllers/admin/categoryController");
 
-categoryRouter.get("/category", show);
-categoryRouter.get("/category/:id", showOne);
-categoryRouter.post("/category", store);
-categoryRouter.patch("/category/:id", update);
-categoryRouter.delete("/category/:id", destroy);
+categoryRouter.get("/categories", show);
+categoryRouter.get("/categories/:id", showOne);
+categoryRouter.post("/categories", store);
+categoryRouter.patch("/categories/:id", update);
+categoryRouter.delete("/categories/:id", destroy);
 
 module.exports = categoryRouter;

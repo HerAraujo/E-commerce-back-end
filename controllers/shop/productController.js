@@ -9,7 +9,8 @@ async function showFeaturedProducts(req, res) {
     });
     res.json(products);
   } catch (err) {
-    res.status(404).json({ message: `Featured products not found` });
+    res.json(err);
+    //res.status(404).json({ message: `An error has ocurred` });
   }
 }
 

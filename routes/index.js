@@ -16,9 +16,9 @@ module.exports = (app) => {
   app.use("/admin", adminStatusRoutes);
   app.use("/admin", adminProductRoutes);
   app.use("/admin", adminCategoryRoutes);
-  app.use("/admin", adminAdminRoutes);
   app.use("/admin", adminImageRoutes);
   app.use("/admin", adminOrderRoutes);
+  app.use("/admin", adminAdminRoutes); //already protected
 
   app.use(productRoutes);
   app.use(categoryRoutes);

@@ -9,8 +9,7 @@ async function showFeaturedProducts(req, res) {
     });
     res.json(products);
   } catch (err) {
-    res.json(err);
-    //res.status(404).json({ message: `An error has ocurred` });
+    res.status(404).json({ message: `An error has ocurred` });
   }
 }
 

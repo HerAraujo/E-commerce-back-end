@@ -2,7 +2,7 @@ const { Product } = require("../../models");
 
 async function show(req, res) {
   try {
-    const products = await Product.findAll();
+    const products = await Product.findAll({ order: [["updatedAt", "DESC"]] });
     res.json(products);
   } catch (err) {
     res.status(400).json({ message: "An error has ocurred" });

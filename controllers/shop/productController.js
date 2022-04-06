@@ -16,11 +16,11 @@ async function showFeaturedProducts(req, res) {
 
 async function showProduct(req, res) {
   try {
-    const product = await Product.findByPk(req.params.id);
+    const product = await Product.findOne({ where: { slug: req.params.slug } });
     if (product) {
       res.json(product);
     } else {
-      res.status(404).json({ message: `Product ${req.params.id} not found` });
+      res.status(404).json({ message: `Product ${req.params.slug} not found` });
     }
   } catch (err) {
     res.status(400).json({ message: `An error has ocurred` });

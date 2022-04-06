@@ -8,7 +8,7 @@ const {
 } = require("../../controllers/shop/productController");
 
 productRouter.get("/featured-products", showFeaturedProducts);
-productRouter.get("/products/:id", showProduct);
+productRouter.get("/products/:slug", showProduct);
 productRouter.get("/products/:id/category", showProductsByCategory);
 
 module.exports = productRouter;

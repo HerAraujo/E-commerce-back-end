@@ -3,30 +3,34 @@ const { Order } = require("../models");
 module.exports = async () => {
   const orders = [
     {
+      orderStatusId: 2,
+
       address: {
-        street: "4th Avenue",
-        portNumber: "4321",
-        apartmentNumber: "1005",
+        street: "5th Avenue",
+        portNumber: "542",
+        apartmentNumber: "104",
         city: "New York",
       },
       products: [
-        { id: 1, name: "Pils Munich", price: "5", quantity: 2 },
-        { id: 3, name: "Bock Rotterdam", price: "3", quantity: 6 },
-        { id: 6, name: "Ale Lisburn", price: "4", quantity: 4 },
+        { id: 1, name: "Blonde Ale", price: "4.51", quantity: 2 },
+        { id: 3, name: "Golden Strong Ale", price: "2.99", quantity: 6 },
+        { id: 20, name: "American Wheat", price: "3.58", quantity: 4 },
       ],
 
       userId: 1,
     },
 
     {
+      orderStatusId: 2,
+
       address: {
-        street: "Brick Lane",
-        portNumber: "2560",
+        street: "Brick lane",
+        portNumber: "1400",
         city: "London",
       },
       products: [
-        { id: 4, name: "Stout Mons", price: "8", quantity: 6 },
-        { id: 3, name: "Bock Rotterdam", price: "3", quantity: 6 },
+        { id: 4, name: "Pale Ales", price: "5.65", quantity: 6 },
+        { id: 23, name: "Dunkelweizen", price: "2.58", quantity: 6 },
       ],
 
       userId: 2,

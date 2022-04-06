@@ -11,6 +11,7 @@ const productRoutes = require("./shop/productRoutes");
 const categoryRoutes = require("./shop/categoryRoutes");
 const userRoutes = require("./shop/userRoutes");
 const orderRoutes = require("./shop/orderRoutes");
+const resetRoutes = require("./shop/resetRoutes");
 
 module.exports = (app) => {
   app.use("/admin", adminAdminRoutes); //all /admin checked by jwt (except /admin/tokens (login))
@@ -20,6 +21,7 @@ module.exports = (app) => {
   app.use("/admin", adminOrderRoutes);
   app.use("/admin", adminProductRoutes);
 
+  app.use(resetRoutes);
   app.use(productRoutes);
   app.use(categoryRoutes);
   app.use(userRoutes);

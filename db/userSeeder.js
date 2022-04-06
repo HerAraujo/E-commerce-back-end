@@ -4,7 +4,7 @@ module.exports = async () => {
   const users = [
     {
       firstname: "User",
-      lastname: "Beer",
+      lastname: "User",
       email: "user@gmail.com",
       password: "user",
       phone: "3657896",
@@ -12,8 +12,8 @@ module.exports = async () => {
     {
       firstname: "Norah",
       lastname: "Jones",
-      email: "mj@gmail.com",
-      password: "encrypted-password",
+      email: "nj@gmail.com",
+      password: "user",
       phone: "3657896",
     },
   ];

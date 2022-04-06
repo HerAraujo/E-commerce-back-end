@@ -1,5 +1,4 @@
-const { Order } = require("../../models");
-const { OrderStatus } = require("../../models");
+const { Order, OrderStatus, Product } = require("../../models");
 
 async function store(req, res) {
   try {
@@ -11,6 +10,13 @@ async function store(req, res) {
       userId: req.user.sub,
       orderStatusId: orderStatus.id,
     });
+
+    for (const product of req.body.products) {
+      const productToUpdate = await Product.findByPk(product.id);
+      const newStock = productToUpdate.stock - product.quantity;
+      await productToUpdate.update({ stock: newStock });
+    }
+
     res.json(order);
   } catch (err) {
     res.status(400).json({ message: `An error has ocurred` });

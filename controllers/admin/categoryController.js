@@ -2,9 +2,15 @@ const { Category } = require("../../models");
 
 async function show(req, res) {
   try {
-    const category = await Category.findAll();
+    const category = await Category.findAll({
+      where: {
+        active: true,
+      },
+    });
     res.json(category);
-  } catch (err) {}
+  } catch (err) {
+    res.status(400).json({ message: `An error has ocurred` });
+  }
 }
 
 async function store(req, res) {
@@ -49,7 +55,7 @@ async function destroy(req, res) {
   try {
     const category = await Category.findByPk(req.params.id);
     if (category) {
-      await Category.destroy({ where: { id: req.params.id } });
+      await Category.update({ active: false }, { where: { id: req.params.id } });
 
       res.json({ message: `Category deleted successfully` });
     } else {

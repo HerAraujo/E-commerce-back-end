@@ -19,6 +19,10 @@ module.exports = (sequelize, Model, DataTypes) => {
       description: {
         type: DataTypes.TEXT,
       },
+      active: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+      },
     },
     {
       sequelize,

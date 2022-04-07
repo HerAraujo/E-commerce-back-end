@@ -2,7 +2,11 @@ const { Category, Product } = require("../../models");
 
 async function show(req, res) {
   try {
-    const categories = await Category.findAll();
+    const categories = await Category.findAll({
+      where: {
+        active: true,
+      },
+    });
     res.json(categories);
   } catch (err) {
     res.status(404).json({ message: `Categories not found` });

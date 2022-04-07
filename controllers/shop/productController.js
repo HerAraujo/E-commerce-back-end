@@ -1,4 +1,5 @@
 const { Product } = require("../../models");
+const { Category } = require("../../models");
 
 async function showFeaturedProducts(req, res) {
   try {
@@ -15,7 +16,10 @@ async function showFeaturedProducts(req, res) {
 
 async function showProduct(req, res) {
   try {
-    const product = await Product.findOne({ where: { slug: req.params.slug } });
+    const product = await Product.findOne({
+      where: { slug: req.params.slug },
+      include: [{ model: Category }],
+    });
     if (product) {
       res.json(product);
     } else {

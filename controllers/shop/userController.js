@@ -21,7 +21,8 @@ async function store(req, res) {
     console.log(Number(process.env.ERROR_CODE_DUPLICATE_KEY));
     err.parent.code === Number(process.env.ERROR_CODE_DUPLICATE_KEY) //postgre
       ? res.status(409).json({ message: "User already exists" })
-      : res.status(400).json({ message: "An error has ocurred" });
+      : //: res.status(400).json({ message: "An error has ocurred" });
+        res.status(400).json({ err });
   }
 }
 

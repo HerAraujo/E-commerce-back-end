@@ -13,28 +13,31 @@ async function show(req, res) {
 
 async function store(req, res) {
   try {
-    const admin = await Admin.findOne({
-      where: { email: req.body.email },
+    // const admin = await Admin.findOne({
+    //   where: { email: req.body.email },
+    // });
+    // if (!admin) {
+    const admin = await Admin.create({
+      firstname: String(req.body.firstname),
+      lastname: String(req.body.lastname),
+      password: String(req.body.password),
+      email: String(req.body.email),
     });
-    if (!admin) {
-      const admin = await Admin.create({
-        firstname: String(req.body.firstname),
-        lastname: String(req.body.lastname),
-        password: String(req.body.password),
-        email: String(req.body.email),
-      });
 
-      const token = jwt.sign({ sub: admin.id }, process.env.JWT_SECRET);
-      res.json({
-        token: token,
-        firstname: admin.firstname,
-        lastname: admin.lastname,
-      });
-    } else {
-      res.json({ message: `${admin.email} does alrady exist` });
-    }
+    const token = jwt.sign({ sub: admin.id }, process.env.JWT_SECRET);
+    res.json({
+      token: token,
+      firstname: admin.firstname,
+      lastname: admin.lastname,
+    });
+    // } else {
+    //   res.json({ message: `${admin.email} does alrady exist` });
+    // }
   } catch (err) {
-    res.status(400).json({ message: `An error has ocurred` });
+    //err.parent.errno === Number(process.env.ERROR_CODE_DUPLICATE_KEY) //mysql
+    err.parent.code === process.env.ERROR_CODE_DUPLICATE_KEY //postgre
+      ? res.status(409).json({ message: "Email already exists" })
+      : res.status(400).json({ message: "An error has ocurred" });
   }
 }
 

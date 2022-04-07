@@ -17,7 +17,8 @@ async function store(req, res) {
     });
     res.json(product);
   } catch (err) {
-    err.parent.errno === Number(process.env.ERROR_CODE_DUPLICATE_KEY)
+    //err.parent.errno === Number(process.env.ERROR_CODE_DUPLICATE_KEY) //mysql
+    err.parent.code === Number(process.env.ERROR_CODE_DUPLICATE_KEY) //postgre
       ? res.status(409).json({ message: "Product already exists" })
       : res.status(400).json({ message: "An error has ocurred" });
   }
@@ -29,7 +30,8 @@ async function update(req, res) {
     product && (await product.update({ ...req.body, id: req.params.id }));
     res.json(product);
   } catch (err) {
-    err.parent.errno === Number(process.env.ERROR_CODE_DUPLICATE_KEY)
+    //err.parent.errno === Number(process.env.ERROR_CODE_DUPLICATE_KEY) //mysql
+    err.parent.code === Number(process.env.ERROR_CODE_DUPLICATE_KEY) //postgre
       ? res.status(409).json({ message: "Product already exists" })
       : res.status(400).json({ message: "An error has ocurred" });
   }

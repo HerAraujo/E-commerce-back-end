@@ -11,7 +11,10 @@ async function show(req, res) {
 
 async function store(req, res) {
   try {
-    const product = await Product.create({ ...req.body, images: [] });
+    const product = await Product.create({
+      ...req.body,
+      images: [{ name: "no-photo-available.png", title: "no-photo-available" }],
+    });
     res.json(product);
   } catch (err) {
     err.parent.errno === Number(process.env.ERROR_CODE_DUPLICATE_KEY)

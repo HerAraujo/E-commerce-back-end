@@ -24,7 +24,10 @@ async function store(req, res) {
 
     res.json({ category });
   } catch (err) {
-    res.status(400).json({ message: `An error has ocurred` });
+    //err.parent.errno === Number(process.env.ERROR_CODE_DUPLICATE_KEY) //mysql
+    err.parent.code === process.env.ERROR_CODE_DUPLICATE_KEY //postgre
+      ? res.status(409).json({ message: "Category already exists" })
+      : res.status(400).json({ message: "An error has ocurred" });
   }
 }
 
@@ -47,7 +50,10 @@ async function update(req, res) {
       res.json({ message: `Category does not exist` });
     }
   } catch (err) {
-    res.status(400).json({ message: `An error has ocurred` });
+    //err.parent.errno === Number(process.env.ERROR_CODE_DUPLICATE_KEY) //mysql
+    err.parent.code === process.env.ERROR_CODE_DUPLICATE_KEY //postgre
+      ? res.status(409).json({ message: "Category already exists" })
+      : res.status(400).json({ message: "An error has ocurred" });
   }
 }
 

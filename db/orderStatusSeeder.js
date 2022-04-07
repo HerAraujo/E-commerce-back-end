@@ -3,13 +3,13 @@ const { OrderStatus } = require("../models");
 module.exports = async () => {
   const orderStatuses = [
     {
-      name: "PENDING",
+      name: "UNPAID",
     },
     {
-      name: "CONFIRMED",
+      name: "PAID",
     },
     {
-      name: "ON-WAY",
+      name: "SENT",
     },
     {
       name: "DELIVERED",

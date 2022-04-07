@@ -2,7 +2,7 @@ const { Order, OrderStatus, Product } = require("../../models");
 
 async function store(req, res) {
   try {
-    const orderStatus = await OrderStatus.findOne({ where: { name: "CONFIRMED" } });
+    const orderStatus = await OrderStatus.findOne({ where: { name: "PAID" } });
 
     const order = await Order.create({
       address: req.body.address,

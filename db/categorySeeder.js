@@ -21,8 +21,8 @@ module.exports = async () => {
         "Dark beer is malty and smooth with toasted caramel flavors. These beers tend to have mid-range alcohol content and lower bitterness profiles.",
     },
     {
-      name: "Wheat Beers",
-      slug: "wheat-beers",
+      name: "Wheat",
+      slug: "wheat",
       description:
         "A wheat beer is any beer made up of at least 50 percent wheat, which is a much higher proportion than other beers that are primarily made of barley, rye, or adjuncts like rice and corn. Wheat beers come in as many styles as you can imagine, but in general, they're light, summery, and refreshing.",
     },

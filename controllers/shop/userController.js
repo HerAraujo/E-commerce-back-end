@@ -15,10 +15,10 @@ async function store(req, res) {
       lastname: user.lastname,
     });
   } catch (err) {
-    res.json({ err: err });
-    // err.parent.errno === Number(process.env.ERROR_CODE_DUPLICATE_KEY)
-    //   ? res.status(409).json({ message: "User already exists" })
-    //   : res.status(400).json({ message: "An error has ocurred" });
+    //err.parent.errno === Number(process.env.ERROR_CODE_DUPLICATE_KEY)
+    err.parent.errno === 23505
+      ? res.status(409).json({ message: "User already exists" })
+      : res.status(400).json({ message: "An error has ocurred" });
   }
 }
 
